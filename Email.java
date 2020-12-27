@@ -1,6 +1,8 @@
-import java.util.Random;
-import java.util.Scanner;
-
+/**
+ * Class to represent an email account
+ * @author DeclanPC
+ * @version 1.0
+ */
 public class Email {
 	private String firstName;
 	private String lastName;
@@ -12,7 +14,12 @@ public class Email {
 	private String alternativeEmail;
 
 
-
+	/**
+	 * lets the first name and last name attributes to given strings
+	 * prompts the user for a department and a password and sets the relevant attributes to the input
+	 * @param firstName
+	 * @param lastName
+	 */
 	public Email(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -21,6 +28,10 @@ public class Email {
 		System.out.println("Email Created: " + this.firstName + "." + this.lastName + "@" + this.department + "." + this.company + ".com");
 	}
 
+	/**
+	 * gets a department from the user
+	 * @return department
+	 */
 	private String setDepartment() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter your department");
@@ -28,6 +39,11 @@ public class Email {
 		return dept;
 	}
 
+	/**
+	 * Generates a random string which will be the users initial password
+	 * the password will be 10 letters long and will be made up of lower case characters
+	 * @return password
+	 */
 	private String generatePassword() {
 	    int leftLimit = 97; // letter 'a'
 	    int rightLimit = 122; // letter 'z'
@@ -42,30 +58,58 @@ public class Email {
 	    return generatedString;
 	}
 
+	/**
+	 * sets the maximum capacity of the users email account
+	 * @param capacity
+	 */
 	public void setMaxMail(int capacity) {
 		this.mailMax = capacity;
 	}
 
+	/**
+	 * sets an alternative email for the user
+	 * @param altEmail
+	 */
 	public void setAlternateEmail(String altEmail) {
 		this.alternativeEmail = altEmail;
 	}
 
+	/**
+	 * allows the user to change password to a given string
+	 * @param password
+	 */
 	public void changePassword(String password) {
 		this.password = password;
 	}
 
+	/**
+	 * returns the data of the users email
+	 * @return email
+	 */
 	public String getEmail() {
 		return this.email;
 	}
 
+	/**
+	 * returns the data of the users password
+	 * @return password
+	 */
 	public String getPassword() {
 		return this.password;
 	}
 
+	/**
+	 * returns the data of the users alternate password
+	 * @return alternateEmail
+	 */
 	public String getAlternateEmail() {
 		return this.alternativeEmail;
 	}
 
+	/**
+	 * returns the data of the users maximum email capacity
+	 * @return mailMax
+	 */
 	public int getMaxMail() {
 		return this.mailMax;
 	}
